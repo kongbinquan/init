@@ -1,6 +1,8 @@
 TYPE=Ethernet
 BOOTPROTO=dhcp
+#static可替换为”none“
 #BOOTPROTO=static
+#默认路由
 DEFROUTE=yes
 #DEFROUTE=no
 PEERDNS=yes
@@ -17,11 +19,12 @@ NAME=eth0
 DEVICE=eth1
 ONBOOT=yes
 #ONBOOT=no
+#值越小优先级越高
 METRIC=100
-DNS1=10.10.100.100
-DNS2=8.8.8.8
+DNS1=8.8.8.8
 #DNS2=8.8.8.8
 #DNS3=8.8.4.4
 #IPADDR=10.
 #GATEWAY=10.0.0.1
+#PREFIX=8
 #NETMASK=255.0.0.0
