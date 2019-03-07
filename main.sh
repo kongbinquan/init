@@ -12,6 +12,14 @@ disable_ipv6() {
     fi
 }
 
+#禁用firewall服务，使用iptables
+enable_iptable(){
+	systemctl stop firewalld
+	systemctl disable firewalld
+	yum -y install iptables iptables-services
+	chkconfig iptables on && systemctl enable iptables
+}
+
 #ssh_iptables() {
 #    sed -ri 's/^#?(Port)\s{1,}.*/\1 22992/' /etc/ssh/sshd_config
 #    curl -Lks4 https://raw.githubusercontent.com/kongbinquan/init/master/friewall2iptables.sh|bash
@@ -184,6 +192,7 @@ changZHCN() {
 }
 
 disable_ipv6
+enable_iptables
 add_yum_pulgins
 sync_time
 ssh_config
