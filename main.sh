@@ -18,6 +18,8 @@ enable_iptable(){
 	systemctl disable firewalld
 	yum -y install iptables iptables-services
 	chkconfig iptables on && systemctl enable iptables
+	curl -Lks4 https://raw.githubusercontent.com/kongbinquan/init/master/iptables_init_rules -o /etc/sysconfig/iptables
+        service iptables reload
 }
 
 #ssh_iptables() {
