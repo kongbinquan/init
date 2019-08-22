@@ -194,7 +194,7 @@ changZHCN() {
 }
 
 disable_ipv6
-enable_iptables
+#enable_iptables
 add_yum_pulgins
 sync_time
 ssh_config
